@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.4% 28.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.4% 28.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.4% 28.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.4% 28.5%;
+    --input: 217.2 32.4% 28.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    --radius: 0.5rem;
+  }
+
+  html {
+    background: #05070d;
+    color: #f4f4f5;
+  }
+
+  body {
+    @apply min-h-screen bg-[#05070d] text-zinc-100 antialiased;
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(239, 68, 68, 0.18), transparent 25%),
+      radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.22), transparent 28%),
+      linear-gradient(180deg, #04070d 0%, #0b1020 100%);
+    font-family: Inter, Arial, Helvetica, sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+@layer components {
+  .spider-app-shell {
+    background-image:
+      linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+      radial-gradient(circle at center, rgba(239,68,68,0.08), transparent 55%);
+    background-size: 26px 26px, 26px 26px, 100% 100%;
+    position: relative;
+  }
+
+  .spider-app-shell::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(rgba(239,68,68,0.08), rgba(59,130,246,0.06)),
+      repeating-linear-gradient(
+        0deg,
+        transparent 0,
+        transparent 12px,
+        rgba(239,68,68,0.04) 12px,
+        rgba(239,68,68,0.04) 13px
+      );
+    pointer-events: none;
+    opacity: 0.7;
+  }
+
+  .web-panel {
+    background: linear-gradient(180deg, rgba(17,24,39,0.9), rgba(5,7,13,0.95));
+    box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.7), 0 0 30px rgba(239, 68, 68, 0.18);
+  }
+}
